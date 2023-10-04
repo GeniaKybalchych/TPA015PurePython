@@ -24,5 +24,5 @@ class User(db.Model):
     username = db.Column(db.String(150), nullable=False)
     hostname = db.Column(db.String(150), nullable=False)
     birthdate = db.Column(db.Date, nullable=True)
- #   timestamp = db.Column(db.DateTime, nullable=False, default=db.func.current_timestamp())
+    timestamp = db.Column(db.DateTime, nullable=False, default=db.func.current_timestamp())
 

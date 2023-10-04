@@ -9,8 +9,8 @@ from model import User, db
 
 app = create_app()
 
-@app.route('/insert-data', methods=['POST'])
-def insert_data():
+@app.route('/users', methods=['POST'])
+def create_user():
     try:
         data = request.json
         # Convertir la date de chaîne de caractères au format `DD-MM-YYYY` en un objet `datetime.date`
@@ -20,28 +20,31 @@ def insert_data():
         formatted_birthdate = birthdate_obj.strftime("%Y-%m-%d")
         new_entry = User(username=data['username'],
                          hostname=data['hostname'],
-                         birthdate=formatted_birthdate)
+                         birthdate=formatted_birthdate,
+                         timestamp=datetime.utcnow())
 
         db.session.add(new_entry)
         db.session.commit()
 
-        return jsonify(status="success", message="Data inserted successfully."), 200
+        return jsonify(status="success", message="User created successfully."), 200
     except Exception as e:
         # Log the error for debugging:
-        app.logger.error(f"Error while inserting data: {str(e)}")
+        app.logger.error(f"Error while creating user: {str(e)}")
         return jsonify(status="error", message=str(e)), 500
 
 
 # 1. Créer une route pour la requête GET
-@app.route('/get-data', methods=['GET'])
-def get_all_data():
+@app.route('/users', methods=['GET'])
+def get_all_users():
     userDemandes = User.query.all()
     listUserDemandes = []
     for demandes in userDemandes:
+        timestamp_str = demandes.timestamp.strftime("%Y-%m-%d %H:%M:%S") if demandes.timestamp else "N/A"
         listUserDemandes.append({'username': demandes.username,
                                  'hostname': demandes.hostname,
-                                 'birthdate': demandes.birthdate})
-
+                                 'birthdate': demandes.birthdate,
+                                 'timestamp': timestamp_str # Convert datetime to string})
+                                 })
         if len(listUserDemandes) == 0:
             return jsonify({'message': 'Aucune demande trouvée'})
 

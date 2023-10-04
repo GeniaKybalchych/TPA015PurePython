@@ -14,7 +14,7 @@ app.config ['SWAGGER'] = {
 
 
 # chercher l'api du service DAO
-service_dao_url = 'http://127.0.0.1:5001/get-data'
+service_dao_url = 'http://127.0.0.1:5001/users'
 
 
 reponse = requests.get(service_dao_url)

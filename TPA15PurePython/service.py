@@ -33,7 +33,7 @@ def signup():
     token = jwt.encode({'exp': expiration_date}, app.config['SECRET_KEY'], algorithm='HS256')
     return token
 
-@app.route('/suggest_activity/<int:temperature>/<string:birthdate>', methods=['GET'])
+@app.route('/activity-suggestions', methods=['GET'])
 @swag_from({
     'responses': {
         '200': {
@@ -81,7 +81,7 @@ def signup():
         }
     ]
 })
-def suggest_activity_endpoint(temperature, birthdate):
+def suggest_activity_endpoint():
     # Vérifiez le JWT
     token = request.args.get('token')
     try:
@@ -90,6 +90,8 @@ def suggest_activity_endpoint(temperature, birthdate):
         return jsonify({'Erreur': 'Token non valide'})
 
     """Endpoint pour obtenir une suggestion d'activité."""
+    temperature = request.args.get('temperature', type=int)
+    birthdate = request.args.get('birthdate')
     try:
         # Convertir la date de naissance en objet date
         birthdate_obj = datetime.strptime(birthdate, "%d-%m-%Y").date()
@@ -98,9 +100,16 @@ def suggest_activity_endpoint(temperature, birthdate):
         if temperature < -30 or temperature > 50:
             return jsonify(error="La température fournie est en dehors de la plage acceptable (-30 à 50 °C)."), 400
 
+        # Obtenir le timestamp actuel
+        current_timestamp = datetime.utcnow().timestamp()
+
         # Récupérez les données supplémentaires de l'utilisateur
         username = request.args.get('username')
         hostname = request.args.get('hostname')
+
+
+
+
 
 
 
@@ -115,6 +124,7 @@ def suggest_activity_endpoint(temperature, birthdate):
             "username": username,
             "hostname": hostname,
             "birthdate": birthdate_obj.strftime("%d-%m-%Y"),
+            "timestamp": current_timestamp
 
         }
 
@@ -122,7 +132,7 @@ def suggest_activity_endpoint(temperature, birthdate):
         print(data)
 
         # Appelez le service DAO pour insérer les données dans la BD
-        response = requests.post('http://127.0.0.1:5001/insert-data', json=data)
+        response = requests.post('http://127.0.0.1:5001/users', json=data)
         if response.status_code != 200:
             return jsonify(error=f"Erreur lors de l'insertion des données. Response: {response.text}"), 500
         return jsonify(activity=activity)

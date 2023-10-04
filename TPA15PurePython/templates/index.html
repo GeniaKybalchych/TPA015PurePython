@@ -41,6 +41,7 @@
                   <th scope="col">Nom d'utilisateur</th>
                   <th scope="col">Date de naissance</th>
                   <th scope="col">Nom d'hote</th>
+                   <th scope="col">Timestamp</th>
                 </tr>
               </thead>
              <tbody>
@@ -50,6 +51,8 @@
                     <td>{{ utilisateur.username }}</td>
                     <td>{{ utilisateur.birthdate }}</td>
                     <td>{{ utilisateur.hostname }}</td>
+                     <td>{{ utilisateur.timestamp }}</td>
+
                  </tr>
               {% endfor %}
             </tbody>
