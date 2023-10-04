@@ -1,7 +1,6 @@
 # Install requests
 from datetime import datetime
 
-import jwt
 from model import create_app
 
 from flask import Flask, jsonify, request
