@@ -32,5 +32,22 @@ def insert_data():
         app.logger.error(f"Error while inserting data: {str(e)}")
         return jsonify(status="error", message=str(e)), 500
 
+
+# 1. Créer une route pour la requête GET
+@app.route('/get-data', methods=['GET'])
+def get_all_data():
+    userDemandes = User.query.all()
+    listUserDemandes = []
+    for demandes in userDemandes:
+        listUserDemandes.append({'username': demandes.username,
+                                 'hostname': demandes.hostname,
+                                 'birthdate': demandes.birthdate})
+
+        if len(listUserDemandes) == 0:
+            return jsonify({'message': 'Aucune demande trouvée'})
+
+    return jsonify({'userDemandes': listUserDemandes})
+
+
 if __name__ == '__main__':
     app.run(port=5001, debug=True)
