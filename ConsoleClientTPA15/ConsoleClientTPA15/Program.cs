@@ -17,6 +17,7 @@ namespace ConsoleClientTPA15
             string dateNaissance = Console.ReadLine();
 
             await Service.GetActivite(Int32.Parse(temperature), dateNaissance);
+            Console.ReadLine();
         }
     }
 }
