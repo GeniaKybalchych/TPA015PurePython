@@ -31,7 +31,7 @@ namespace ConsoleClientTPA15
 
 
                 string birthdateFormatted = birthdate.Replace("/", "-");
-                string url = $"http://127.0.0.1:5000/activity-suggestions?temperature={temperature}&birthdate={birthdateFormatted}&username={username}&hostname={hostname}&token={token}";
+                string url = $"http://127.0.0.1:5500/activity-suggestions?temperature={temperature}&birthdate={birthdateFormatted}&username={username}&hostname={hostname}&token={token}";
                 HttpResponseMessage response = await client.GetAsync(url);
 
                 if (response.IsSuccessStatusCode)

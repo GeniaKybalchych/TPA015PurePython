@@ -27,6 +27,10 @@ def suggest_activity(temperature):
     else:
         return "Ski"
 
+@app.route('/test')
+def test():
+    return "Test successful"
+
 @app.route('/signup', methods=['GET'])
 def signup():
     expiration_date = datetime.utcnow() + timedelta(seconds=300)
@@ -108,11 +112,6 @@ def suggest_activity_endpoint():
         hostname = request.args.get('hostname')
 
 
-
-
-
-
-
         # Valider que toutes les données nécessaires sont présentes
         if not username or not hostname or not birthdate_obj:
             return jsonify(error="Des données nécessaires manquent."), 400
@@ -132,7 +131,7 @@ def suggest_activity_endpoint():
         print(data)
 
         # Appelez le service DAO pour insérer les données dans la BD
-        response = requests.post('http://127.0.0.1:5001/users', json=data)
+        response = requests.post(f'http://host.docker.internal:5001/users', json=data)
         if response.status_code != 200:
             return jsonify(error=f"Erreur lors de l'insertion des données. Response: {response.text}"), 500
         return jsonify(activity=activity)
@@ -143,4 +142,4 @@ def suggest_activity_endpoint():
         return jsonify(error=f"Une erreur inattendue s'est produite: {str(e)}"), 500
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0',debug=True)

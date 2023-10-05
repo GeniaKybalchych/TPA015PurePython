@@ -6,3 +6,11 @@ C:\Users\eugen\Documents\projet_TPAPI015\client\ConsoleClientTPA15\ConsoleClient
 C:\Users\eugen\Documents\projet_TPAPI015\client\ConsoleClientTPA15\ConsoleClientTPA15\obj\Debug\ConsoleClientTPA15.csproj.CoreCompileInputs.cache
 C:\Users\eugen\Documents\projet_TPAPI015\client\ConsoleClientTPA15\ConsoleClientTPA15\obj\Debug\ConsoleClientTPA15.exe
 C:\Users\eugen\Documents\projet_TPAPI015\client\ConsoleClientTPA15\ConsoleClientTPA15\obj\Debug\ConsoleClientTPA15.pdb
+C:\Users\eugen\Documents\TPA015PurePython\TPA015PurePython\ConsoleClientTPA15\ConsoleClientTPA15\bin\Debug\ConsoleClientTPA15.exe.config
+C:\Users\eugen\Documents\TPA015PurePython\TPA015PurePython\ConsoleClientTPA15\ConsoleClientTPA15\bin\Debug\ConsoleClientTPA15.exe
+C:\Users\eugen\Documents\TPA015PurePython\TPA015PurePython\ConsoleClientTPA15\ConsoleClientTPA15\bin\Debug\ConsoleClientTPA15.pdb
+C:\Users\eugen\Documents\TPA015PurePython\TPA015PurePython\ConsoleClientTPA15\ConsoleClientTPA15\obj\Debug\ConsoleClientTPA15.csproj.AssemblyReference.cache
+C:\Users\eugen\Documents\TPA015PurePython\TPA015PurePython\ConsoleClientTPA15\ConsoleClientTPA15\obj\Debug\ConsoleClientTPA15.csproj.SuggestedBindingRedirects.cache
+C:\Users\eugen\Documents\TPA015PurePython\TPA015PurePython\ConsoleClientTPA15\ConsoleClientTPA15\obj\Debug\ConsoleClientTPA15.csproj.CoreCompileInputs.cache
+C:\Users\eugen\Documents\TPA015PurePython\TPA015PurePython\ConsoleClientTPA15\ConsoleClientTPA15\obj\Debug\ConsoleClientTPA15.exe
+C:\Users\eugen\Documents\TPA015PurePython\TPA015PurePython\ConsoleClientTPA15\ConsoleClientTPA15\obj\Debug\ConsoleClientTPA15.pdb

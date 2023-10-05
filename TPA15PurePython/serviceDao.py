@@ -9,6 +9,7 @@ from model import User, db
 
 app = create_app()
 
+
 @app.route('/users', methods=['POST'])
 def create_user():
     try:
