@@ -17,16 +17,3 @@ Affiche les informations des utilisateurs et des statistiques à partir du servi
 
 # Déploiement
 Pré-requis: Assurez-vous d'avoir installé Docker, .NET Core SDK et Python.
-
-## Client C#:
-
-- Naviguez vers le dossier contenant le code du client C#.
-- Compilez le projet avec la commande: dotnet build
-- Exécutez le client avec: dotnet run
-
-## Service Principal:
-
-- Chaque service (principal, DAO, analytique) est un microservice séparé.
-- Naviguez vers le fichier de chaque service.
-- Construisez le Dockerfile pour chaque service: docker build -t nom_du_service .
-- Exécutez le service avec: docker run -p port:port nom_du_service
