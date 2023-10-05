@@ -1,5 +1,4 @@
-# TPA015PurePython
-Description du Système
+# Description du Système
 
 # Client C#
 Un client console simple en C# qui récupère la température et la date de naissance de l'utilisateur, et demande une suggestion d'activité basée sur la température.
