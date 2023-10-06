@@ -15,6 +15,7 @@ Un client console simple en C# qui récupère la température et la date de nais
 
 ## Service Principal
 Le service principal est basé sur Flask et utilise JWT pour l'authentification. Il fournit une suggestion d'activité basée sur la température et enregistre les informations de l'utilisateur dans une base de données à l'aide du service DAO. 
+
 ![image](https://github.com/GeniaKybalchych/TPA015PurePython/assets/117115542/739865a2-4688-4d06-8314-64d55a540833)
 
 ## Service DAO
@@ -25,6 +26,7 @@ Ce service gère la base de données (MySQL) des utilisateurs et offre deux rout
 
 ## Service Analytique
 Fournit des statistiques basées sur les données stockées dans la base de données.
+
 ![image](https://github.com/GeniaKybalchych/TPA015PurePython/assets/117115542/94ca9ca1-79e4-4eca-8313-10426fe1ca57)
 
 
