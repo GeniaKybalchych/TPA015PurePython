@@ -37,11 +37,17 @@ Affiche les informations des utilisateurs et des statistiques à partir du servi
 Pré-requis: Assurez-vous d'avoir installé Docker, .NET Core SDK et Python.
 
 ## Étapes: 
+
 (1) Construction de l'image: docker build -t micro :latest .
+
 (2) Exécution du service dans un container Docker: docker run -p 5500:5000 micro
+
 ![image](https://github.com/GeniaKybalchych/TPA015PurePython/assets/117115542/213b0119-ee3e-4ebe-8ef5-7624c15c1ae1)
+
 (3) Validation avec Postman: 
+
 ![image](https://github.com/GeniaKybalchych/TPA015PurePython/assets/117115542/83e5693f-db55-4c95-8e1d-27105f1fe08a)
+
 ![image](https://github.com/GeniaKybalchych/TPA015PurePython/assets/117115542/24e8906b-ffff-49b0-9b0c-41f31340e178)
 
 
